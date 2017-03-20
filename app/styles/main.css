@@ -70,5 +70,8 @@ height: 57.6em;
 margin-left: -51.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: red;
+    background-image: url("../images/backgroundtake1.jpg");
+    background-size: 102em 57em;
+    background-repeat: no-repeat;
+/*background: red;*/
 }
