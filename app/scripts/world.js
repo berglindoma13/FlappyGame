@@ -21,7 +21,7 @@
 
      World.prototype.onFrame = function(delta){
 
-         this.down.pos.x += (delta * SPEED);
+         this.down.pos.x -= (delta * SPEED);
          this.down.css('transform', 'translateZ(0) translate(' + this.down.pos.x + 'em, ' + this.down.pos.y + 'em)');
      };
 
