@@ -29,6 +29,7 @@
 
      World.prototype.onFrame = function(delta){
 
+         this.CheckCollisionWithPlayer();
          this.outOfBounds();
 
          this.down.pos.x -= (delta * SPEED);
@@ -43,6 +44,10 @@
          if(this.pipe1.pos.x < -WIDTH){
              return this.reset();
          }
+     };
+
+     World.prototype.CheckCollisionWithPlayer = function(){
+         //FIND HEIGHT AND WIDTH OF PIPE TO CHECK FOR COLLISION WITH PLAYER
      };
 
      return World;
