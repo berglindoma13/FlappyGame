@@ -1,3 +1,13 @@
+.DownMovement{
+    position:absolute;
+    width: 200em;
+    height: 10em;
+    background-image: url(../images/downMovement.jpg);
+    background-size: 20em 4em;
+    background-repeat: repeat-x;
+    margin-top:537px;
+}
+
 .Player {
 	position: absolute;
 	top: 0;
