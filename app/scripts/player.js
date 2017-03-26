@@ -56,6 +56,11 @@ window.Player = (function() {
 	    document.getElementById('CurrentScore').innerHTML = currentScore;
     };
 
+	Player.prototype.PlayerDeath = function(){
+	    document.getElementById('CollidingSound').play();
+	    document.getElementById('MainThemeSong').pause();
+    }
+
 
 	Player.prototype.GetGameScore = function(){
 	    return currentScore;
@@ -66,6 +71,7 @@ window.Player = (function() {
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+		    this.PlayerDeath();
 			return this.game.gameover();
 		}
 	};

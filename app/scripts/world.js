@@ -63,6 +63,7 @@
          if(this.pipe1.pos.x >= 25 && this.pipe1.pos.x < 35){
             if(this.game.player.pos.y >= this.pipe1.pos.y + 2 || this.game.player.pos.y <= this.pipe2.pos.y + 68){
                 this.game.gameover();
+                this.game.player.PlayerDeath();
             }
             else if(this.pointsAdded === false){
                 this.pointsAdded = true;
