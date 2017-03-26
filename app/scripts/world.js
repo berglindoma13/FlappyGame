@@ -7,23 +7,31 @@
      var SPEED = 30;
      var WIDTH = 20;
 
-     var World = function(pipe1, down, game){
+     var World = function(pipe1, pipe2,down, game){
          this.game = game;
          this.pipe1 = pipe1;
+         this.pipe2 = pipe2;
          this.down = down;
 
          this.pipe1.pos = {x: 0, y:0};
+         this.pipe2.pos = {x: 0, y:0};
          this.down.pos = {x: 0, y: 0};
      };
 
      World.prototype.reset = function(){
+         var random = (Math.floor(Math.random() * 30) + 1) - 65;
          this.down.pos.x = 0;
          this.pipe1.pos.x = 120;
+         this.pipe2.pos.x = 120;
 
-         //Change this to a random number
-         this.pipe1.pos.y = 30;
+         //this.pipe2.pos.y = -65;
+         //this.pipe1.pos.y = 50;
+         console.log(random);
+         this.pipe2.pos.y = random;
+         this.pipe1.pos.y = random + 85;
 
          this.pipe1.css('transform', 'translateZ(0) translate(' + this.pipe1.pos.x + 'em, ' + this.pipe1.pos.y + 'em)');
+         this.pipe2.css('transform', 'translateZ(0) translate(' + this.pipe2.pos.x + 'em, ' + this.pipe2.pos.y + 'em)');
          this.down.css('transform', 'translateZ(0) translate(' + this.down.pos.x + 'em, ' + this.down.pos.y + 'em)');
      };
 
@@ -34,8 +42,11 @@
 
          this.down.pos.x -= (delta * SPEED);
          this.pipe1.pos.x -= (delta * SPEED);
+         this.pipe2.pos.x -= (delta * SPEED);
+
 
          this.pipe1.css('transform', 'translateZ(0) translate(' + this.pipe1.pos.x + 'em, ' + this.pipe1.pos.y + 'em)');
+         this.pipe2.css('transform', 'translateZ(0) translate(' + this.pipe2.pos.x + 'em, ' + this.pipe2.pos.y + 'em)');
          this.down.css('transform', 'translateZ(0) translate(' + this.down.pos.x + 'em, ' + this.down.pos.y + 'em)');
      };
 
@@ -48,8 +59,12 @@
 
      World.prototype.CheckCollisionWithPlayer = function(){
          //FIND HEIGHT AND WIDTH OF PIPE TO CHECK FOR COLLISION WITH PLAYER
+         if(this.pipe1.pos.x >= 25 && this.pipe1.pos.x < 35){
 
+
+         }
      };
 
      return World;
+
  })();

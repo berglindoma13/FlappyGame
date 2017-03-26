@@ -10,7 +10,7 @@ window.Game = (function() {
 	var Game = function(el) {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
-        this.world = new window.World(this.el.find('#pipe1'),this.el.find('#DownMovement'), this);
+        this.world = new window.World(this.el.find('#pipe1'),this.el.find('#pipe2'),this.el.find('#DownMovement'), this);
 		this.isPlaying = true;
 
 		// Cache a bound onFrame since we need it each frame.

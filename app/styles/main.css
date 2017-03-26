@@ -24,7 +24,7 @@
     height: 2.4em;
     top: 0em;
     right: 1em;
-  
+
   background: url(../images/redWings.png) no-repeat;
   transform-origin: bottom left;
   animation: 0.4s flap alternate infinite;
@@ -44,10 +44,10 @@
     top: 0;
     left: 0;
     width: 7em;
-    height: 40em;
+    height: 70em;
 
     background-image: url(../images/pipetake1.png);
-    background-size: 7em 40em;
+    background-size: 7em 70em;
     background-repeat: no-repeat;
 }
 
