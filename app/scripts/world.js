@@ -48,6 +48,7 @@
 
      World.prototype.CheckCollisionWithPlayer = function(){
          //FIND HEIGHT AND WIDTH OF PIPE TO CHECK FOR COLLISION WITH PLAYER
+
      };
 
      return World;
