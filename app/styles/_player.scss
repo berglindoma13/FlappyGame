@@ -3,10 +3,11 @@
     // Absolutely position entities at 0,0 and use transform to
     // move it around.
     position: absolute;
-    top: 0;
-    left: 0;
-    width: em(50px);
-    height: em(50px);
+    top: 0em;
+    left: 0em;
+    width: 5em;
+    height: 5em;
 
     background: blue;
 }
+

@@ -15,6 +15,7 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
 		this.pos = { x: 0, y: 0 };
+		this.rotate = 0;
 	};
 
 	/**
@@ -27,19 +28,29 @@ window.Player = (function() {
 	};
 
 	Player.prototype.onFrame = function(delta) {
+		//Festa fuglinn á miðjum skjánum
+		/*if(Controls.keys.space){
+	        this.pos.y = delta * SPEED;
+        }
+        else{
+	        this.pos.y = delta * SPEED;
+        }*/
 
 	    if(Controls.keys.space){
 	        this.pos.y -= delta * SPEED + 2;
+			this.rotate = -40;
         }
         else{
-	        this.pos.y += delta * SPEED;
+	        this.pos.y += delta * SPEED + 0,2;
+			this.rotate += delta * SPEED + 1;
         }
+
 
 
 		this.checkCollisionWithBounds();
 
 		// Update UI
-		this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+		this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)' + 'rotate(' + this.rotate + 'deg)');
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
