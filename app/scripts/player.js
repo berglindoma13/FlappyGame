@@ -43,11 +43,11 @@ window.Player = (function() {
 
 	    if(Controls.keys.space){
 	        this.pos.y -= delta * SPEED + 1;
-			//this.rotate = -40;
+			this.rotate = -20;
         }
         else{
 	        this.pos.y += delta * SPEED + 0.1;
-			//this.rotate += delta * SPEED + 1;
+			this.rotate += delta * SPEED + 1;
         }
 
 
