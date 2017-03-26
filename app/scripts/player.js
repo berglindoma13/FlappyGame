@@ -11,6 +11,8 @@ window.Player = (function() {
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
 
+	var currentScore = 0;
+
 	var Player = function(el, game) {
 		this.el = el;
 		this.game = game;
@@ -25,6 +27,9 @@ window.Player = (function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
 
+		currentScore = 0;
+		document.getElementById('CurrentScore').innerHTML = 0;
+
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -37,12 +42,12 @@ window.Player = (function() {
         }*/
 
 	    if(Controls.keys.space){
-	        this.pos.y -= delta * SPEED + 2;
-			this.rotate = -40;
+	        this.pos.y -= delta * SPEED + 1;
+			//this.rotate = -40;
         }
         else{
-	        this.pos.y += delta * SPEED + 0,2;
-			this.rotate += delta * SPEED + 1;
+	        this.pos.y += delta * SPEED + 0.1;
+			//this.rotate += delta * SPEED + 1;
         }
 
 
@@ -52,6 +57,12 @@ window.Player = (function() {
 		// Update UI
 		this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)' + 'rotate(' + this.rotate + 'deg)');
 	};
+
+	Player.prototype.AddScore = function(){
+	    currentScore += 1;
+	    document.getElementById('CurrentScore').innerHTML = currentScore;
+    };
+
 
 	Player.prototype.checkCollisionWithBounds = function() {
 		if (this.pos.x < 0 ||

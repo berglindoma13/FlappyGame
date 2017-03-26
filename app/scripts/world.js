@@ -16,6 +16,8 @@
          this.pipe1.pos = {x: 0, y:0};
          this.pipe2.pos = {x: 0, y:0};
          this.down.pos = {x: 0, y: 0};
+
+         this.pointsAdded = false;
      };
 
      World.prototype.reset = function(){
@@ -24,10 +26,9 @@
          this.pipe1.pos.x = 120;
          this.pipe2.pos.x = 120;
 
-         //this.pipe2.pos.y = -65;
-         //this.pipe1.pos.y = 50;
-         console.log(random);
+         //Upper pipe
          this.pipe2.pos.y = random;
+         //Lower pipe
          this.pipe1.pos.y = random + 85;
 
          this.pipe1.css('transform', 'translateZ(0) translate(' + this.pipe1.pos.x + 'em, ' + this.pipe1.pos.y + 'em)');
@@ -60,8 +61,14 @@
      World.prototype.CheckCollisionWithPlayer = function(){
          //FIND HEIGHT AND WIDTH OF PIPE TO CHECK FOR COLLISION WITH PLAYER
          if(this.pipe1.pos.x >= 25 && this.pipe1.pos.x < 35){
+            if(this.game.player.pos.y >= this.pipe1.pos.y + 3 || this.game.player.pos.y <= this.pipe2.pos.y + 67){
+                this.game.gameover();
+            }
+            else if(this.pointsAdded === false){
+                this.pointsAdded = true;
+                this.game.player.AddScore();
 
-
+            }
          }
      };
 
