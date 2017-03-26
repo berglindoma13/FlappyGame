@@ -5,7 +5,7 @@
     background-image: url(../images/downMovement.jpg);
     background-size: 20em 4em;
     background-repeat: repeat-x;
-    margin-top:537px;
+    margin-top: 53.7em;
 }
 
 .Player {
@@ -14,20 +14,41 @@
 	left: 0;
 	width: 5em;
 	height: 5em;
-	background: blue;
+	background: url(../images/bird.png) no-repeat;
+    background-size: 5em 4em;
+}
+
+.Player-wings {
+  position: absolute;
+    width: 3em;
+    height: 2.4em;
+    top: 0em;
+    right: 1em;
+  
+  background: url(../images/redWings.png) no-repeat;
+  transform-origin: bottom left;
+  animation: 0.4s flap alternate infinite;
+}
+
+@keyframes flap {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(180deg);
+  }
 }
 
 .Pipe{
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 7em;
     height: 40em;
 
     background-image: url(../images/pipetake1.png);
     background-size: 7em 40em;
     background-repeat: no-repeat;
-
 }
 
 .Scoreboard {
@@ -66,11 +87,11 @@ color: black;
 }
 
 #CurrentScore {
-    font-size: 24px;
+    font-size: 2.4em;
     font-family: Tahoma, sans-serif;
     font-weight: bold;
     color: white;
-    margin-left: 8px;
+    margin-left: 0.8em;
 }
 
 .LoosingMessage{
@@ -93,15 +114,15 @@ padding: 0.2em 0;
 }
 
 .GameCanvas {
-font-size: 10px;
-position: absolute;
-left: 50%;
-top: 50%;
-width: 102.4em;
-height: 57.6em;
-margin-left: -51.2em;
-margin-top: -28.8em;
-overflow: hidden;
+    font-size: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 102.4em;
+    height: 57.6em;
+    margin-left: -51.2em;
+    margin-top: -28.8em;
+    overflow: hidden;
     background-image: url("../images/backgroundtake1.jpg");
     background-size: 102em 57em;
     background-repeat: no-repeat;
