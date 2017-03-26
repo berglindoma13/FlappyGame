@@ -76,6 +76,7 @@ window.Game = (function() {
 					scoreboardEl.removeClass('is-visible');
 					that.start();
 				});
+        document.getElementById('Score').innerHTML=this.player.GetGameScore();
 	};
 
 	/**

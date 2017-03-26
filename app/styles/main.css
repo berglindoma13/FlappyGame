@@ -14,8 +14,8 @@
 	left: 0;
 	width: 5em;
 	height: 5em;
-	background: url(../images/bird.png) no-repeat;
-    background-size: 5em 4em;
+	background-image: url(../images/birdtake4.png);
+    background-size: 5em 5em;
 }
 
 .Player-wings {
@@ -51,6 +51,22 @@
     background-repeat: no-repeat;
 }
 
+.Planet{
+    position: absolute;
+    width: 200em;
+    height: 20em;
+    background-image: url(../images/planet.png);
+    background-size: 20em 20em;
+    background-repeat: no-repeat;
+    animation: animatedcloud 10s linear infinite;
+    -webkit-transform: translatez(0);
+}
+
+@keyframes animateCloud {
+    from { background-position: 100% 0;}
+    to { background-position: -25% 0;}
+}
+
 .Scoreboard {
 	position: absolute;
 	left: 50%;
@@ -73,7 +89,7 @@
 }
 
 .Scoreboard-restart {
-	margin-top: 14em;
+	margin-top: 5em;
 	font-size: inherit;
 	padding: 0.4em 1.5em;
 	border: 0.2em solid white;
