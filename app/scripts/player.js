@@ -33,17 +33,10 @@ window.Player = (function() {
 	};
 
 	Player.prototype.onFrame = function(delta) {
-		//Festa fuglinn á miðjum skjánum
-		/*if(Controls.keys.space){
-	        this.pos.y = delta * SPEED;
-        }
-        else{
-	        this.pos.y = delta * SPEED;
-        }*/
-
 	    if(Controls.keys.space){
 	        this.pos.y -= delta * SPEED + 1;
 			this.rotate = -20;
+			document.getElementById('FlappingSound').play();
         }
         else{
 	        this.pos.y += delta * SPEED + 0.1;

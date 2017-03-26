@@ -50,6 +50,14 @@ window.Game = (function() {
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
+
+		//SET MAIN THEME SONG ON LOOP
+		document.getElementById('MainThemeSong').currentTime = 0;
+        document.getElementById('MainThemeSong').play();
+        document.getElementById('MainThemeSong').volume = 0.2;
+
+        //SET FLAPPING SOUND SETTINGS
+        document.getElementById('FlappingSound').playbackRate = 2;
 	};
 
 	/**
