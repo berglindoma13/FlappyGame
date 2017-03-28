@@ -14,3 +14,24 @@ if (!window.requestAnimationFrame) {
             };
     })();
 }
+
+function muteSound() {
+    if(document.getElementById('MainThemeSong').paused){
+        document.getElementById('MainThemeSong').currentTime = 0;
+		document.getElementById('MainThemeSong').play();
+		document.getElementById('MainThemeSong').volume = 1;
+    }
+    else{
+        document.getElementById('MainThemeSong').pause();
+    }
+}
+
+function scaleGame(){
+    var fontSize = Math.min(
+        window.innerWidth / 102.4,
+        window.innerHeight / 57.6
+    );
+    $('.GameCanvas')[0].style.fontSize = fontSize + 'px';
+}
+
+$( window ).resize(scaleGame);

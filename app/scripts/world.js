@@ -7,15 +7,17 @@
      var SPEED = 30;
      var WIDTH = 20;
 
-     var World = function(pipe1, pipe2,down, game){
+     var World = function(pipe1, pipe2,down, game, planet){
          this.game = game;
          this.pipe1 = pipe1;
          this.pipe2 = pipe2;
          this.down = down;
+         this.planet = planet;
 
          this.pipe1.pos = {x: 0, y:0};
          this.pipe2.pos = {x: 0, y:0};
          this.down.pos = {x: 0, y: 0};
+         this.planet.pos = {x: 0, y:0};
 
          this.pointsAdded = false;
      };
@@ -25,6 +27,7 @@
          this.down.pos.x = 0;
          this.pipe1.pos.x = 120;
          this.pipe2.pos.x = 120;
+         this.planet.pos.x = 220;
 
          //Upper pipe
          this.pipe2.pos.y = random;
@@ -34,6 +37,7 @@
          this.pipe1.css('transform', 'translateZ(0) translate(' + this.pipe1.pos.x + 'em, ' + this.pipe1.pos.y + 'em)');
          this.pipe2.css('transform', 'translateZ(0) translate(' + this.pipe2.pos.x + 'em, ' + this.pipe2.pos.y + 'em)');
          this.down.css('transform', 'translateZ(0) translate(' + this.down.pos.x + 'em, ' + this.down.pos.y + 'em)');
+         this.planet.css('transform', 'translateZ(0) translate(' + this.planet.pos.x + 'em, ' + this.planet.pos.y + 'em)');
      };
 
      World.prototype.onFrame = function(delta){
@@ -44,11 +48,12 @@
          this.down.pos.x -= (delta * SPEED);
          this.pipe1.pos.x -= (delta * SPEED);
          this.pipe2.pos.x -= (delta * SPEED);
-
+         this.planet.pos.x -= (delta * SPEED*2);
 
          this.pipe1.css('transform', 'translateZ(0) translate(' + this.pipe1.pos.x + 'em, ' + this.pipe1.pos.y + 'em)');
          this.pipe2.css('transform', 'translateZ(0) translate(' + this.pipe2.pos.x + 'em, ' + this.pipe2.pos.y + 'em)');
          this.down.css('transform', 'translateZ(0) translate(' + this.down.pos.x + 'em, ' + this.down.pos.y + 'em)');
+         this.planet.css('transform', 'translateZ(0) translate(' + this.planet.pos.x + 'em, ' + this.planet.pos.y + 'em)');
      };
 
      World.prototype.outOfBounds = function(){

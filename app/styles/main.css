@@ -58,14 +58,14 @@
     background-image: url(../images/planet.png);
     background-size: 20em 20em;
     background-repeat: no-repeat;
-    animation: animatedcloud 10s linear infinite;
-    -webkit-transform: translatez(0);
+    /*animation: animatedcloud 10s linear infinite;
+    -webkit-transform: translateZ(0);*/
 }
 
-@keyframes animateCloud {
+/*@keyframes animateCloud {
     from { background-position: 100% 0;}
     to { background-position: -25% 0;}
-}
+}*/
 
 .Scoreboard {
 	position: absolute;
@@ -143,4 +143,11 @@ padding: 0.2em 0;
     background-size: 102em 57em;
     background-repeat: no-repeat;
 /*background: red;*/
+}
+
+.mute {
+    position: absolute;
+    width: 5em;
+    height: 3em;
+    font-size: 1em;
 }

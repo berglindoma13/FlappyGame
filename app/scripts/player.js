@@ -29,22 +29,21 @@ window.Player = (function() {
 
 		currentScore = 0;
 		document.getElementById('CurrentScore').innerHTML = 0;
-
 	};
 
 	Player.prototype.onFrame = function(delta) {
-	    if(Controls.keys.space){
+	    if(Controls.keys.space || Controls.keys.mouseDown){
 	        this.pos.y -= delta * SPEED + 1;
 			this.rotate = -20;
 			document.getElementById('FlappingSound').play();
-        }
+		}
         else{
+
+
 	        this.pos.y += delta * SPEED + 0.1;
 			this.rotate += delta * SPEED + 1;
         }
-
-
-
+		
 		this.checkCollisionWithBounds();
 
 		// Update UI

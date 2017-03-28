@@ -10,8 +10,9 @@ window.Game = (function() {
 	var Game = function(el) {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
-        this.world = new window.World(this.el.find('#pipe1'),this.el.find('#pipe2'),this.el.find('#DownMovement'), this);
+        this.world = new window.World(this.el.find('#pipe1'),this.el.find('#pipe2'),this.el.find('#DownMovement'), this, this.el.find('#planet'));
 		this.isPlaying = true;
+		this.isMuted = false;
 
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
@@ -51,10 +52,13 @@ window.Game = (function() {
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
 
-		//SET MAIN THEME SONG ON LOOP
-		document.getElementById('MainThemeSong').currentTime = 0;
-        document.getElementById('MainThemeSong').play();
-        document.getElementById('MainThemeSong').volume = 0.2;
+		if(this.isMuted === false){
+			//SET MAIN THEME SONG ON LOOP
+			document.getElementById('MainThemeSong').currentTime = 0;
+			document.getElementById('MainThemeSong').play();
+			document.getElementById('MainThemeSong').volume = 1;
+		}
+		
 
         //SET FLAPPING SOUND SETTINGS
         document.getElementById('FlappingSound').playbackRate = 2;
